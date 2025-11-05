@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IP Checker</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin-top: 50px;
+  }
+  #ip {
+    font-size: 24px;
+    color: green;
+  }
+</style>
+</head>
+<body>
+  <h1>Your Public IP Address</h1>
+  <p id="ip">Checking...</p>
+
+  <script>
+    fetch('https://api.ipify.org?format=json')
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById('ip').innerText = data.ip;
+      })
+      .catch(() => {
+        document.getElementById('ip').innerText = 'Could not fetch IP';
+      });
+  </script>
+</body>
+</html>
