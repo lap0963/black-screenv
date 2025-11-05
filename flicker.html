@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Black Screen</title>
+<style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    overflow: hidden;
+    cursor: none;
+    user-select: none;
+    touch-action: none;
+  }
+
+  /* Flicker animation */
+  @keyframes flicker {
+    0%, 100% { background-color: black; }
+    10% { background-color: #050505; }
+    20% { background-color: #0a0a0a; }
+    30% { background-color: #000000; }
+    40% { background-color: #070707; }
+    50% { background-color: black; }
+    60% { background-color: #0a0a0a; }
+    70% { background-color: black; }
+    80% { background-color: #050505; }
+    90% { background-color: black; }
+  }
+
+  body {
+    animation: flicker 0.5s infinite;
+  }
+
+  /* Prevent accidental focus outlines */
+  * {
+    outline: none;
+  }
+</style>
+</head>
+<body>
+</body>
+</html>
