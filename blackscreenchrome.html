@@ -8,11 +8,18 @@
   html, body {
     margin: 0;
     padding: 0;
-    width: 100%;
-    height: 100%;
+    width: 100vw;            /* Full viewport width */
+    height: 100vh;           /* Full viewport height */
     background-color: black;  /* Full black screen */
-    overflow: hidden;
-    cursor: none;  /* Hides the mouse cursor */
+    overflow: hidden;         /* Prevent scrolling */
+    cursor: none;             /* Hide mouse cursor */
+    user-select: none;        /* Prevent text selection */
+    touch-action: none;       /* Disable touch gestures */
+  }
+
+  /* Prevent any accidental focus outlines or interactions */
+  * {
+    outline: none;
   }
 </style>
 </head>
