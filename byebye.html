@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>System Nuke</title>
+<title>CRITICAL SYSTEM ALERT</title>
 <style>
   html, body {
     margin: 0;
@@ -13,24 +13,26 @@
     background-color: black;
     color: red;
     font-family: monospace;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    cursor: none;
     overflow: hidden;
+    cursor: none;
   }
 
-  #message {
-    font-size: 24px;
-    text-align: center;
-    white-space: pre;
+  #container {
+    position: absolute;
+    width: 100%;
+    height: 800%; /* super long scroll */
+    animation: scrollUp 120s linear infinite; /* long scroll duration */
   }
 
-  /* Fake “file deletion” animation with CSS only */
+  @keyframes scrollUp {
+    0% { top: 100%; }
+    100% { top: -700%; }
+  }
+
   .file {
     display: block;
-    margin: 2px 0;
+    margin: 4px 0;
+    font-size: 22px;
     animation: blink 0.5s infinite;
   }
 
@@ -38,50 +40,76 @@
     0%, 100% { opacity: 1; }
     50% { opacity: 0.3; }
   }
+
+  #header {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 6px #ff0000aa;
+  }
+
+  .warning {
+    font-size: 28px;
+    color: yellow;
+    text-align: center;
+    margin: 20px 0;
+    text-shadow: 2px 2px 6px #ffaa00aa;
+    animation: flicker 1s infinite;
+  }
+
+  @keyframes flicker {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
 </style>
 </head>
 <body>
 
-<div id="message">
-Deleting temporary files...
-<div class="file">C:\Temp\file1.tmp</div>
-<div class="file">C:\Temp\file2.tmp</div>
-<div class="file">C:\Temp\file3.tmp</div>
-<div class="file">C:\Temp\file4.tmp</div>
-<div class="file">C:\Temp\file5.tmp</div>
-<div class="file">C:\Temp\file6.tmp</div>
-<div class="file">C:\Temp\file7.tmp</div>
-<div class="file">C:\Temp\file8.tmp</div>
-<div class="file">C:\Temp\file9.tmp</div>
-<div class="file">C:\Temp\file10.tmp</div>
-<div class="file">C:\Temp\file10.tmp</div>
-<div class="file">C:\Temp\file10.tmp</div>
-<div class="file">C:\Temp\file10.tmp</div>
-<div class="file">C:\Temp\file10.tmp</div>
-<div class="file">C:\Temp\file10.tmp</div>
-<div class="file">C:\Temp\file10.tmp</div>
-<div class="file">C:\Temp\file10.tmp</div>
-<div class="file">C:\Temp\file10.tmp</div>
-<div class="file">C:\Temp\file10.tmp</div>
-<div class="file">C:\Temp\file10.tmp</div>
-<div class="file">C:\Temp\file10.tmp</div>
-<div class="file">C:\Temp\file10.tmp</div>
-<div class="file">C:\Temp\file10.tmp</div>
-<div class="file">C:\Temp\file10.tmp</div>
-<div class="file">C:\Temp\file10.tmp</div>
-<div class="file">C:\Temp\file10.tmp</div>
-<div class="file">C:\Temp\file10.tmp</div>
-<div class="file">C:\Temp\file10.tmp</div>
-<div class="file">C:\Temp\file10.tmp</div>
-<div class="file">C:\Temp\file10.tmp</div>
-<div class="file">C:\Temp\file10.tmp</div>
-<div class="file">C:\Temp\file10.tmp</div>
-<div class="file">C:\Temp\file10.tmp</div>
-<div class="file">C:\Temp\file10.tmp</div>
-<div class="file">C:\Temp\file10.tmp</div>
-<div class="file">C:\Temp\file10.tmp</div>
-<div class="file">C:\Temp\file10.tmp</div>
-<div class="file">C:\Temp\file10.tmp</div>
+<div id="container">
+  <div id="header">CRITICAL SYSTEM ALERT! Deleting files...</div>
+
+  <!-- Fake files -->
+  <div class="file">C:\Temp\file1.tmp</div>
+  <div class="file">C:\Temp\file2.tmp</div>
+  <div class="file">C:\Temp\file3.tmp</div>
+  <div class="file">C:\Temp\file4.tmp</div>
+  <div class="file">C:\Temp\file5.tmp</div>
+  <div class="file">C:\Temp\file6.tmp</div>
+  <div class="file">C:\Temp\file7.tmp</div>
+  <div class="file">C:\Temp\file8.tmp</div>
+  <div class="file">C:\Temp\file9.tmp</div>
+  <div class="file">C:\Temp\file10.tmp</div>
+  <div class="file">C:\Temp\file11.tmp</div>
+  <div class="file">C:\Temp\file12.tmp</div>
+  <div class="file">C:\Temp\file13.tmp</div>
+  <div class="file">C:\Temp\file14.tmp</div>
+  <div class="file">C:\Temp\file15.tmp</div>
+  <div class="file">C:\Temp\file16.tmp</div>
+  <div class="file">C:\Temp\file17.tmp</div>
+  <div class="file">C:\Temp\file18.tmp</div>
+  <div class="file">C:\Temp\file19.tmp</div>
+  <div class="file">C:\Temp\file20.tmp</div>
+
+  <!-- Fake warnings/errors -->
+  <div class="warning">ERROR: File system integrity compromised!</div>
+  <div class="warning">WARNING: Temporary files cannot be recovered!</div>
+  <div class="warning">ALERT: Critical system processes at risk!</div>
+  <div class="warning">ERROR: Deletion failed on C:\Temp\important.tmp</div>
+  <div class="warning">WARNING: Continue at your own risk!</div>
+  <div class="warning">ERROR: Unauthorized access detected!</div>
+  <div class="warning">CRITICAL: System memory corruption!</div>
+
+  <!-- Repeat more fake files to extend scrolling -->
+  <div class="file">C:\Temp\file21.tmp</div>
+  <div class="file">C:\Temp\file22.tmp</div>
+  <div class="file">C:\Temp\file23.tmp</div>
+  <div class="file">C:\Temp\file24.tmp</div>
+  <div class="file">C:\Temp\file25.tmp</div>
+  <div class="file">C:\Temp\file26.tmp</div>
+  <div class="file">C:\Temp\file27.tmp</div>
+  <div class="file">C:\Temp\file28.tmp</div>
+  <div class="file">C:\Temp\file29.tmp</div>
+  <div class="file">C:\Temp\file30.tmp</div>
 </div>
 
 </body>
